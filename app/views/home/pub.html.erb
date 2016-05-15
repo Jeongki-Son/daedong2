@@ -1,0 +1,11 @@
+<% @post.each do |post| %>
+<div class="container" style="margin:30px;">
+<div class="thumbnail">
+
+    <img src="<%= post.poster %>">
+    <p><%= post.major %></p>
+    <p><%= post.concept %></p>
+    <p><%= post.closing_time %></p>    
+</div>
+</div>
+<% end %>

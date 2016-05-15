@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>서울과학기술대학교 대동제</title>
+  
+  
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <!-- <link href="css/font-awesome.min.css" rel="stylesheet"> -->
+  <!-- Google Font -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway:500,600,700,800,900,400,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=699da0cadc95ef6d1f9eeb5118dc01fb"></script>
+  
+  <%= javascript_include_tag 'jquery.ajaxchimp.langs' %>
+  <%= javascript_include_tag 'jquery.ajaxchimp.min' %>
+  <%= javascript_include_tag 'jquery.counterup.min' %>
+  <%= javascript_include_tag 'jquery.fitvids' %>
+  <%= javascript_include_tag 'jquery.min' %>
+  <%= javascript_include_tag 'jquery.parallax-1.1.3' %>
+  <%= javascript_include_tag 'jquery.prettyPhoto' %>
+  <%= javascript_include_tag 'bootstrap.min' %>
+  <%= javascript_include_tag 'owl.carousel' %>
+  <%= javascript_include_tag 'script' %>
+  <%= javascript_include_tag 'smoothscroll' %>
+  <%= javascript_include_tag 'waypoints.min' %>
+  <%= javascript_include_tag 'wow.min' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'mapview', 'data-turbolinks-track' => false %>
+  
+  <%= stylesheet_link_tag    'mapview', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'animate', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'bootstrap.min', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'font-awesome.min', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'owl.carousel', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'owl.theme', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'Pe-icon-7-stroke', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'prettyPhoto', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'responsive', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+<%= yield %>
+ 
+</body>
+</html>
