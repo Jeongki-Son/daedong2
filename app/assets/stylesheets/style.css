@@ -146,7 +146,6 @@ p {
 	background-repeat: no-repeat;
 }
 .header .section_overlay {
-    background-color: rgba(252, 238, 213, .75);
 }
 .logo{
     padding-bottom: 50px;
@@ -216,6 +215,7 @@ p {
 .tuor:focus,
 tuor:active,
 tuor:visited {
+    margin-top:70%;
     color: #d36b60;
     margin-left: 20px;
     text-transform: uppercase;
