@@ -834,6 +834,7 @@
                 <!-- END DOWNLOADABLE STORE -->
             </div>
         </div>
+<<<<<<< HEAD
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
@@ -904,6 +905,205 @@
                 <!-- END DOWNLOADABLE STORE -->
             </div>
         </div>
+=======
+    </section>
+    <!-- END DOWNLOAD -->
+
+<!-- =========================
+     START CONTCT FORM AREA
+============================== -->
+    <section class="contact page" id="CONTACT">
+        
+        <p>
+          <button onclick="resizeMap()">지도 확장</button> 
+          <button onclick="resizeMap2()">원래 크기</button> 
+        </p>
+      
+        
+        <p>
+            <button onclick="setCenter()">붕어방 근처로</button> 
+            <button onclick="panTo()">과기대 운동장으로</button> 
+        </p>
+        
+        <p><em>지도를 클릭해주세요!</em></p> 
+        <p id="result"></p>
+   
+        <p>
+            <button onclick="hideMarkers()">마커 감추기</button>
+            <button onclick="showMarkers()">마커 보이기</button>
+        </p> 
+        <em>클릭한 위치에 마커가 표시됩니다!</em> 
+   
+        
+        
+        
+        
+        <div id="map" style="width:1600px;height:1000px;"></div>
+        <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=699da0cadc95ef6d1f9eeb5118dc01fb"></script>
+
+        <script>
+        
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = { 
+                center: new daum.maps.LatLng( 37.62974625887734, 127.07736578639081 ), // 지도의 중심좌표
+                level: 1 // 지도의 확대 레벨
+            };
+        
+        var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+        
+                
+        function resizeMap() {
+            var mapContainer = document.getElementById('map');
+            mapContainer.style.width = '1600px';
+            mapContainer.style.height = '1000px'; 
+        }
+        
+        function resizeMap2() {
+            var mapContainer = document.getElementById('map');
+            mapContainer.style.width = '1000px';
+            mapContainer.style.height = '600px'; 
+        }
+        
+        function relayout() {    
+            
+            // 지도를 표시하는 div 크기를 변경한 이후 지도가 정상적으로 표출되지 않을 수도 있습니다
+            // 크기를 변경한 이후에는 반드시  map.relayout 함수를 호출해야 합니다 
+            // window의 resize 이벤트에 의한 크기변경은 map.relayout 함수가 자동으로 호출됩니다
+            map.relayout();
+        }
+   
+   
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+              
+            
+            
+           
+           
+          
+          
+            function setCenter() {            
+                // 이동할 위도 경도 위치를 생성합니다 
+                var moveLatLon = new daum.maps.LatLng(37.633344, 127.077970);
+                
+                // 지도 중심을 이동 시킵니다
+                map.setCenter(moveLatLon);
+            }
+            
+            function panTo() {
+                // 이동할 위도 경도 위치를 생성합니다 
+                var moveLatLon = new daum.maps.LatLng(37.629669, 127.077891);
+                
+                // 지도 중심을 부드럽게 이동시킵니다
+                // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+                map.panTo(moveLatLon);            
+            }        
+        
+            // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+            var mapTypeControl = new daum.maps.MapTypeControl();
+            
+            // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+            // daum.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+            map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+            
+            // 지도 확장 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+            var zoomControl = new daum.maps.ZoomControl();
+            map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+            
+            // 지도에 교통정보를 표시하도록 지도타입을 추가합니다
+            map.addOverlayMapTypeId(daum.maps.MapTypeId.TRAFFIC);    
+            
+            // 아래 코드는 위에서 추가한 교통정보 지도타입을 제거합니다
+            // map.removeOverlayMapTypeId(daum.maps.MapTypeId.TRAFFIC);    
+            
+            // 지도에 로드뷰 정보가 있는 도로를 표시하도록 지도타입을 추가합니다
+            //map.addOverlayMapTypeId(daum.maps.MapTypeId.ROADVIEW);    
+            
+            // 아래 코드는 위에서 추가한 로드뷰 도로 정보 지도타입을 제거합니다
+            map.removeOverlayMapTypeId(daum.maps.MapTypeId.ROADVIEW);    
+            
+            
+            
+            
+            
+            
+            // 지도를 클릭했을때 클릭한 위치에 마커를 추가하도록 지도에 클릭이벤트를 등록합니다
+            daum.maps.event.addListener(map, 'click', function(mouseEvent) {        
+                // 클릭한 위치에 마커를 표시합니다 
+                addMarker(mouseEvent.latLng);             
+           
+            
+            
+            
+                // 클릭한 위도, 경도 정보를 가져옵니다 
+                var latlng = mouseEvent.latLng;
+                
+                var message = '클릭한 위치의 위도와 경도는는 ' + latlng.getLat() + ', ';
+                message +=  latlng.getLng() + ' 입니다';
+                
+                var resultDiv = document.getElementById('result'); 
+                resultDiv.innerHTML = message;
+                
+            });
+            
+            
+            
+            // 지도에 표시된 마커 객체를 가지고 있을 배열입니다
+            var markers = [];
+            
+           
+            // 마커를 생성하고 지도위에 표시하는 함수입니다
+            function addMarker(position) {
+                
+                // 마커를 생성합니다
+                var marker = new daum.maps.Marker({
+                    position: position
+                });
+            
+                // 마커가 지도 위에 표시되도록 설정합니다
+                marker.setMap(map);
+                
+                // 생성된 마커를 배열에 추가합니다
+                markers.push(marker);
+            }
+            
+            // 배열에 추가된 마커들을 지도에 표시하거나 삭제하는 함수입니다
+            function setMarkers(map) {
+                for (var i = 0; i < markers.length; i++) {
+                    markers[i].setMap(map);
+                }            
+            }
+            
+            // "마커 보이기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에 표시하는 함수입니다
+            function showMarkers() {
+                setMarkers(map)    
+            }
+            
+            // "마커 감추기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에서 삭제하는 함수입니다
+            function hideMarkers() {
+                setMarkers(null);    
+            }
+            
+           
+           
+        </script>
+        
+>>>>>>> 53be0b8ba8a1f80f442202538f94d1f2d323934b
     </section>
     <!-- END DOWNLOAD -->
 
