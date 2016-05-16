@@ -36,8 +36,8 @@
                             <li><a href="#HOME">HOME</a> </li>
                             <li><a href="#ABOUT">ABOUT </a> </li>
                             <li><a href="#FEATURES">LineUp</a></li>
-                            <li><a href="#SCREENS">주점</a> </li>
                             <li><a href="#CONTACT">Live 지도 </a> </li>
+                            <li><a href="#SCREENS">주점</a> </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                           <li><a href="https://daedong2-jeongki-son.c9users.io/home/pub">Detail한 주점 </a> </li>
@@ -384,6 +384,65 @@
     </section>
     <!-- END FEATURES SECTION -->
     
+    <!-- =========================
+     START CONTCT FORM AREA
+============================== -->
+    <section class="contact page" id="CONTACT">
+        
+        <div class="container">
+            <div class="row" id="no1">
+                <div class="col-md-10 col-md-offset-1">
+                    <!-- FEATURES SECTION TITLE -->
+                    <div class="section_title wow fadeIn" data-wow-duration="1s">
+                        <h2><b>지도</b></h2>
+                        <p>클릭하시면 무슨 일이 벌어질까요~?</p>
+                    </div>
+                    <!-- END FEATURES SECTION TITLE -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+          <div class="row" id="no1">
+                <div class="col-md-10 col-md-offset-1">
+                    <!-- FEATURES SECTION TITLE -->
+                    <div class="section_title wow fadeIn" data-wow-duration="1s">
+                      <p>
+                        <button onclick="resizeMap()">모바일크기</button> 
+                        <button onclick="resizeMap2()">피씨크기</button> 
+                      </p>
+                    
+                      
+                      <p>
+                          <button onclick="setCenter()">향학로로</button> 
+                          <button onclick="panTo()">과기대 운동장으로</button> 
+                      </p>
+                      
+                      <p><em>지도를 클릭해주세요!</em></p> 
+                      <p id="result"></p>
+                 
+                      <p>
+                          <button onclick="hideMarkers()">마커 감추기</button>
+                          <button onclick="showMarkers()">마커 보이기</button>
+                      </p> 
+                      <p>클릭한 위치에 마커가 표시됩니다!</p>
+                    </div>
+                      <!-- END FEATURES SECTION TITLE -->
+                  </div>
+            </div>
+           </div>
+           
+          <div class="row" id="no1">
+                <div class="col-md-10 col-md-offset-1">
+                    <!-- FEATURES SECTION TITLE -->
+                    <div class="section_title wow fadeIn" data-wow-duration="1s">
+                        <div id="map"></div>
+                    </div>
+                      <!-- END FEATURES SECTION TITLE -->
+                </div>
+          </div>
+    </section>
+    <!-- END DOWNLOAD -->
     
 <!-- =========================
      Start APPS SCREEN SECTION
@@ -411,7 +470,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">MSDE <span style="color:red">원샷해적</span></a><span>/</span></h3>
+                            <h3><a href="#">MSDE<br><span style="color:red">원샷해적</span></a><span>/</span></h3>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -421,7 +480,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">ITM <span style="color:red">꽃보다주점</span></a><span>/</span></h3>
+                            <h3><a href="#">ITM<br><span style="color:red">꽃보다주점</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -430,7 +489,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">산업공학과 <span style="color:red">웰컴투산공주점</span></a><span>/</span></h3>
+                            <h3><a href="#">산업공학과<br><span style="color:red">웰컴투산공주점</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -447,7 +506,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>\</span><a href="#"><span style="color:blue">꽃보다주점</span> 경영</a></h3>
+                            <h3><a href="#">경영<br><span>\</span><span style="color:blue">어릔이대공원</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -456,7 +515,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>\</span><a href="#"><span style="color:blue">꽃보다주점</span> GTM</a></h3>
+                            <h3><a href="#">GTM<br><span>\</span><span style="color:blue">경성타임즈</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -471,7 +530,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">전기정보공학과 <span style="color:red">원샷해적</span></a><span>/</span></h3>
+                            <h3><a href="#">전기정보공학과<br><span style="color:red">전정나이트</span></a><span>/</span></h3>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -481,7 +540,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">전자IT공학과 <span style="color:red">꽃보다주점</span></a><span>/</span></h3>
+                            <h3><a href="#">전자IT공학과<br><span style="color:red">꼬마들이 술 타요</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -501,7 +560,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>\</span><a href="#"><span style="color:blue">꽃보다주점</span> 컴퓨터공학과</a></h3>
+                            <h3><a href="#">컴퓨터공학과<br><span>\</span><span style="color:blue">공능 콤-퓨타</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -517,7 +576,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">정밀화학과 <span style="color:red">원샷해적</span></a><span>/</span></h3>
+                            <h3><a href="#">정밀화학과<br><span style="color:red">???</span></a><span>/</span></h3>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -527,7 +586,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">화공생명공학과 <span style="color:red">꽃보다주점</span></a><span>/</span></h3>
+                            <h3><a href="#">화공생명공학과<br><span style="color:red">술기로운 생활</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -536,7 +595,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">환경공학과 <span style="color:red">웰컴투산공주점</span></a><span>/</span></h3>
+                            <h3><a href="#">환경공학과<br><span style="color:red">어른이대공원</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -553,7 +612,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>\</span><a href="#"><span style="color:blue">꽃보다주점</span> 식품공학과</a></h3>
+                            <h3><a href="#">식품공학과<br><span>\</span><span style="color:blue">???</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -562,7 +621,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>\</span><a href="#"><span style="color:blue">꽃보다주점</span> 스포츠과학과</a></h3>
+                            <h3><a href="#">스포츠과학과<br><span>\</span><span style="color:blue">닭치고스과</span> </a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -570,7 +629,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>\</span><a href="#"><span style="color:blue">꽃보다주점</span> 안경광학과</a></h3>
+                            <h3><a href="#">안경광학과<br><span>\</span><span style="color:blue">가면무도회</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -585,7 +644,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">디자인학과 <span style="color:red">원샷해적</span></a><span>/</span></h3>
+                            <h3><a href="#">디자인학과<br><span style="color:red">디학주점</span></a><span>/</span></h3>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -595,7 +654,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">도자문화학과 <span style="color:red">꽃보다주점</span></a><span>/</span></h3>
+                            <h3><a href="#">도자문화학과<br><span style="color:red">도:틸다</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -612,7 +671,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>\</span><a href="#"><span style="color:blue">꽃보다주점</span> 금속공예학과</a></h3>
+                            <h3><a href="#">금속공예학과<br><span>\</span><span style="color:blue">꽃보다주점</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -621,7 +680,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>\</span><a href="#"><span style="color:blue">꽃보다주점</span> 조형예술학과</a></h3>
+                            <h3><a href="#">조형예술학과<br><span>\</span><span style="color:blue">섹시할로윈</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -636,7 +695,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">행정학과 <span style="color:red">원샷해적</span></a><span>/</span></h3>
+                            <h3><a href="#">행정학과<br><span style="color:red">코카꽐라</span></a><span>/</span></h3>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -646,7 +705,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">영어영문학과 <span style="color:red">꽃보다주점</span></a><span>/</span></h3>
+                            <h3><a href="#">영어영문학과<br><span style="color:red">꽃보다주점</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -663,7 +722,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>\</span><a href="#"><span style="color:blue">꽃보다주점</span> 문예창작학과</a></h3>
+                            <h3><a href="#">문예창작학과<br><span>\</span><span style="color:blue">칵테일 실험실</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -678,7 +737,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">기계시스템디자인공학과 <span style="color:red">원샷해적</span></a><span>/</span></h3>
+                            <h3><a href="#">기계시스템디자인공학과<br><span style="color:red">Summer Gang Vacance</span></a><span>/</span></h3>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -688,7 +747,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">기계자동차공학과 <span style="color:red">꽃보다주점</span></a><span>/</span></h3>
+                            <h3><a href="#">기계자동차공학과<br><span style="color:red">응답하라 2016</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -697,7 +756,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">안전공학과 <span style="color:red">웰컴투산공주점</span></a><span>/</span></h3>
+                            <h3><a href="#">안전공학과<br><span style="color:red">미니언주</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -705,7 +764,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">신소재공학과 <span style="color:red">웰컴투산공주점</span></a><span>/</span></h3>
+                            <h3><a href="#">신소재공학과<br><span style="color:red">웰컴투산공주점</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -722,7 +781,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>\</span><a href="#"><span style="color:blue">꽃보다주점</span> 건설시스템공학과</a></h3>
+                            <h3><a href="#">건설시스템공학과<br><span>\</span><span style="color:blue">꽃보다주점</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -731,7 +790,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>\</span><a href="#"><span style="color:blue">꽃보다주점</span> 건축공학과</a></h3>
+                            <h3><a href="#">건축공학과<br><span>\</span><span style="color:blue">GS25시 공릉탕</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -739,7 +798,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>\</span><a href="#"><span style="color:blue">꽃보다주점</span> 건축학과</a></h3>
+                            <h3><a href="#">건축학과<br><span>\</span><span style="color:blue">꽃보다주점</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -758,45 +817,47 @@
     <!-- ENS APPS SCREEN -->
 
 
-
 <!-- =========================
-     START CONTCT FORM AREA
+     FOOTER 
 ============================== -->
-    <section class="contact page" id="CONTACT">
-        
-        <p>
-          <button onclick="resizeMap()">모바일크기</button> 
-          <button onclick="resizeMap2()">피씨크기</button> 
-        </p>
-      
-        
-        <p>
-            <button onclick="setCenter()">향학로로</button> 
-            <button onclick="panTo()">과기대 운동장으로</button> 
-        </p>
-        
-        <p><em>지도를 클릭해주세요!</em></p> 
-        <p id="result"></p>
-   
-        <p>
-            <button onclick="hideMarkers()">마커 감추기</button>
-            <button onclick="showMarkers()">마커 보이기</button>
-        </p> 
-        <em>클릭한 위치에 마커가 표시됩니다!</em> 
-   
-        
-        
-        
-        
-        <div id="map" style="width:1400px;height:1000px;"></div>
-        <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=699da0cadc95ef6d1f9eeb5118dc01fb"></script>
+
+    <section class="copyright">
+        <h2></h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="copy_right_text" style="width:100%">
+                    <!-- COPYRIGHT TEXT -->
+                        <p>Copyright &copy; 멋쟁이사자처럼 서울과학기술대학교<br> With 2016 <a href="">Bent</a> <span>By </span><a href="http://designscrazed.org/">Designscrazed</a></p>
+                    </div>
+                    <div class="copy_right_text" style="width:100%">
+                    <!-- COPYRIGHT TEXT -->
+                        <p>Developed by 손정기 조완호 박주환 윤현진</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="scroll_top">
+                        <a href="#HOME"><i class="fa fa-angle-up"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END FOOTER -->
+    
+    
+<!-- =========================
+     Map Script 
+============================== -->    
+    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=699da0cadc95ef6d1f9eeb5118dc01fb"></script>
 
         <script>
         
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
             mapOption = { 
                 center: new daum.maps.LatLng( 37.629261240374944, 127.07848397463181 ), // 지도의 중심좌표
-                level: 1 // 지도의 확대 레벨
+                level: 2 // 지도의 확대 레벨
             };
         
         var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -824,28 +885,6 @@
    
    
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-              
-            
-            
-           
-           
-          
           
             function setCenter() {            
                 // 이동할 위도 경도 위치를 생성합니다 
@@ -952,46 +991,3 @@
            
            
         </script>
-        
->>>>>>> 53be0b8ba8a1f80f442202538f94d1f2d323934b
-    </section>
-    <!-- END DOWNLOAD -->
-
-<!-- =========================
-     START CONTCT FORM AREA
-============================== -->
-    <section class="contact page" id="CONTACT">
-        
-    </section>
-
-    <!-- END SUBSCRIPBE FORM -->
-
-
-<!-- =========================
-     FOOTER 
-============================== -->
-
-    <section class="copyright">
-        <h2></h2>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="copy_right_text" style="width:100%">
-                    <!-- COPYRIGHT TEXT -->
-                        <p>Copyright &copy; 멋쟁이사자처럼 서울과학기술대학교<br> With 2016 <a href="">Bent</a> <span>By </span><a href="http://designscrazed.org/">Designscrazed</a></p>
-                    </div>
-                    <div class="copy_right_text" style="width:100%">
-                    <!-- COPYRIGHT TEXT -->
-                        <p>Developed by 손정기 조완호 박주환 윤현진</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="scroll_top">
-                        <a href="#HOME"><i class="fa fa-angle-up"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END FOOTER -->
