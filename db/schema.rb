@@ -62,13 +62,4 @@ ActiveRecord::Schema.define(version: 20160515074033) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "strores", force: :cascade do |t|
-    t.string   "major"
-    t.string   "concept"
-    t.string   "poster"
-    t.time     "closing_time"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
 end

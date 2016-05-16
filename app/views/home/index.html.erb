@@ -578,119 +578,166 @@
      START CONTCT FORM AREA
 ============================== -->
     <section class="contact page" id="CONTACT">
-        <div class="section_overlay">
-            <div class="container">
-                <div class="col-md-10 col-md-offset-1 wow bounceIn">
-                    <!-- Start Contact Section Title-->
-                    <div class="section_title">
-                        <h2>Get in touch</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                    </div>
-                </div>
-            </div>
+        
+        <p>
+          <button onclick="resizeMap()">지도 확장</button> 
+          <button onclick="resizeMap2()">원래 크기</button> 
+        </p>
+      
+        
+        <p>
+            <button onclick="setCenter()">붕어방 근처로</button> 
+            <button onclick="panTo()">과기대 운동장으로</button> 
+        </p>
+        
+        <p><em>지도를 클릭해주세요!</em></p> 
+        <p id="result"></p>
+   
+        <p>
+            <button onclick="hideMarkers()">마커 감추기</button>
+            <button onclick="showMarkers()">마커 보이기</button>
+        </p> 
+        <em>클릭한 위치에 마커가 표시됩니다!</em> 
+   
+        
+        
+        
+        
+        <div id="map" style="width:1000px;height:600px;"></div>
+        <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=699da0cadc95ef6d1f9eeb5118dc01fb"></script>
 
-            <div class="contact_form wow bounceIn">
-                <div class="container">
+        <script>
+        
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = { 
+                center: new daum.maps.LatLng(37.629669, 127.077891), // 지도의 중심좌표
+                level: 2 // 지도의 확대 레벨
+            };
+        
+        var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+        
+                
+        function resizeMap() {
+            var mapContainer = document.getElementById('map');
+            mapContainer.style.width = '1200px';
+            mapContainer.style.height = '1000px'; 
+        }
+        
+        function resizeMap2() {
+            var mapContainer = document.getElementById('map');
+            mapContainer.style.width = '1000px';
+            mapContainer.style.height = '600px'; 
+        }
+        
+        function relayout() {    
+            
+            // 지도를 표시하는 div 크기를 변경한 이후 지도가 정상적으로 표출되지 않을 수도 있습니다
+            // 크기를 변경한 이후에는 반드시  map.relayout 함수를 호출해야 합니다 
+            // window의 resize 이벤트에 의한 크기변경은 map.relayout 함수가 자동으로 호출됩니다
+            map.relayout();
+        }
+   
+   
+            
+            // 다각형을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 다각형을 표시합니다
+            var polygonPath = [
+                new daum.maps.LatLng(37.630448, 127.077628),
+                new daum.maps.LatLng(37.630400, 127.077742),
+                new daum.maps.LatLng(37.630328, 127.077659),
+                new daum.maps.LatLng(37.630286, 127.077734),
+                new daum.maps.LatLng(37.630031, 127.077487),
+                new daum.maps.LatLng(37.630133, 127.077278)
+                
+            ];
+            
+            // 지도에 표시할 다각형을 생성합니다
+            var polygon = new daum.maps.Polygon({
+                path:polygonPath, // 그려질 다각형의 좌표 배열입니다
+                strokeWeight: 3, // 선의 두께입니다
+                strokeColor: '#39DE2A', // 선의 색깔입니다
+                strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                strokeStyle: 'longdash', // 선의 스타일입니다
+                fillColor: '#A2FF99', // 채우기 색깔입니다
+                fillOpacity: 0.7 // 채우기 불투명도 입니다
+            });
+             // 지도에 다각형을 표시합니다
+            polygon.setMap(map);
+              
+            
+            var iwContent = '<div style="padding:5px;"><a href= "#DOWNLOAD">에바대주점</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                iwPosition = new daum.maps.LatLng(37.630448, 127.077628), //인포윈도우 표시 위치입니다
+                iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+            
+            // 인포윈도우를 생성하고 지도에 표시합니다
+            var infowindow = new daum.maps.InfoWindow({
+                map: map, // 인포윈도우가 표시될 지도
+                position : iwPosition, 
+                content : iwContent,
+                removable : iwRemoveable
+            });
+           
 
-                <!-- START ERROR AND SUCCESS MESSAGE -->
-                    <div class="form_error text-center">
-                        <div class="name_error hide error">Please Enter your name</div>
-                        <div class="email_error hide error">Please Enter your Email</div>
-                        <div class="email_val_error hide error">Please Enter a Valid Email Address</div>
-                        <div class="message_error hide error">Please Enter Your Message</div>
-                    </div>
-                    <div class="Sucess"></div>
-                <!-- END ERROR AND SUCCESS MESSAGE -->
-
-                <!-- FORM -->    
-                    <form role="form">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" id="name" placeholder="Name">
-                                <input type="email" class="form-control" id="email" placeholder="Email">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject">
-                            </div>
-
-
-                            <div class="col-md-8">
-                                <textarea class="form-control" id="message" rows="25" cols="10" placeholder="  Message Texts..."></textarea>
-                                <button type="button" class="btn btn-default submit-btn form_submit">SEND MESSAGE</button>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- END FORM --> 
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 wow bounceInLeft">
-                        <div class="social_icons">
-                            <ul>
-                                <li><a href=""><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li><a href=""><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li><a href=""><i class="fa fa-dribbble"></i></a>
-                                </li>
-                                <li><a href=""><i class="fa fa-behance"></i></a>
-                                </li>
-                                <li><a href=""><i class="fa fa-youtube-play"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END CONTACT -->
-
-<!-- =========================
-     Start Subscription Form 
-============================== -->
-
-
-
-    <section class="subscribe parallax subscribe-parallax" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
-        <div class="section_overlay wow lightSpeedIn">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-
-                        <!-- Start Subscribe Section Title -->
-                        <div class="section_title">
-                            <h2>SUBSCRIBE US</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                        </div>
-                        <!-- End Subscribe Section Title -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row  wow lightSpeedIn">
-                    <div class="col-md-6 col-md-offset-3">
-                        <!-- SUBSCRIPTION SUCCESSFUL OR ERROR MESSAGES -->
-                        <div class="subscription-success"></div>
-                        <div class="subscription-error"></div>
-
-
-                        <form id="mc-form" class="subscribe_form">
-                            <div class="form-group">
-                                <!-- EMAIL INPUT BOX -->
-                                <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="Enter Email Address">
-                            </div>
-
-                                <!-- SUBSCRIBE BUTTON -->
-                            <button type="submit" class="btn btn-default subs-btn">Submit</button>
-                        </form>
+                
 
 
-                    </div>
-                </div>
-            </div>
-        </div>
+            
+            
+            
+
+          
+          
+          
+          
+          
+            function setCenter() {            
+                // 이동할 위도 경도 위치를 생성합니다 
+                var moveLatLon = new daum.maps.LatLng(37.633344, 127.077970);
+                
+                // 지도 중심을 이동 시킵니다
+                map.setCenter(moveLatLon);
+            }
+            
+            function panTo() {
+                // 이동할 위도 경도 위치를 생성합니다 
+                var moveLatLon = new daum.maps.LatLng(37.629669, 127.077891);
+                
+                // 지도 중심을 부드럽게 이동시킵니다
+                // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+                map.panTo(moveLatLon);            
+            }        
+        
+            // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+            var mapTypeControl = new daum.maps.MapTypeControl();
+            
+            // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+            // daum.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+            map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+            
+            // 지도 확장 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+            var zoomControl = new daum.maps.ZoomControl();
+            map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+            
+            // 지도에 교통정보를 표시하도록 지도타입을 추가합니다
+            map.addOverlayMapTypeId(daum.maps.MapTypeId.TRAFFIC);    
+            
+            // 아래 코드는 위에서 추가한 교통정보 지도타입을 제거합니다
+            // map.removeOverlayMapTypeId(daum.maps.MapTypeId.TRAFFIC);    
+            
+            // 지도에 로드뷰 정보가 있는 도로를 표시하도록 지도타입을 추가합니다
+            //map.addOverlayMapTypeId(daum.maps.MapTypeId.ROADVIEW);    
+            
+            // 아래 코드는 위에서 추가한 로드뷰 도로 정보 지도타입을 제거합니다
+            map.removeOverlayMapTypeId(daum.maps.MapTypeId.ROADVIEW);    
+            
+            
+            
+            
+            
+            
+           
+           
+        </script>
+        
     </section>
 
     <!-- END SUBSCRIPBE FORM -->

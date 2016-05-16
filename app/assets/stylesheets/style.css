@@ -737,7 +737,19 @@ div.carousel-inner .item img {
    SECTION CONTACT              
 -----------------------------------------*/
 
+#map {
+    /* text-align: center;
+    background-position: center;
+    position: relative;
+    align-items: center;
+    justify-content: center; */
+    margin: auto;
+    width: 2000px;
+    height: 100%;
+}
+
 .contact {
+    
     background: #f1f1f1;
     background-repeat: no-repeat;
     background-size: cover;
