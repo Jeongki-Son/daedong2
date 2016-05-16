@@ -1,11 +1,27 @@
+<div class="page-header">
+<h1>주점 메뉴 확인 페이지</h1> <br><br>
+</div>
 <% @post.each do |post| %>
-<div class="container" style="margin:30px;">
-<div class="thumbnail">
 
+
+    <!-- 공사중 -->
+            <div class="col-md-3 col-sm-6">
+                <div class="well">
+                        <img width="260" height="290" src="<%= post.poster %>" class="img-rounded" class="img-responsive" />
+                        <h4><strong><%= post.major %></strong></h4>
+                        <p><strong>학과 : </strong><%= post.major %></p>
+                        <p><strong>컨셉 : </strong><%= post.concept %></p>
+                        <p><strong>폐점시간 : </strong><%= post.closing_time %></p>
+                        <a href="<%=post.id%>"><p><strong>메뉴보기</strong></p></a>
+                </div>    
+            </div>
+            
+    <!-- 여기까지 공사중 -->
+
+    <!-- 원래코드입니다 
     <img src="<%= post.poster %>">
     <p><%= post.major %></p>
     <p><%= post.concept %></p>
-    <p><%= post.closing_time %></p>    
-</div>
+    <p><%= post.closing_time %></p> -->    
 </div>
 <% end %>

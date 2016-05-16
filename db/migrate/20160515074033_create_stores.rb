@@ -5,7 +5,7 @@ class CreateStores < ActiveRecord::Migration
       t.string :major
       t.string :concept
       t.string :poster
-      t.time :closing_time
+      t.text :closing_time
 
       t.timestamps null: false
     end
