@@ -57,7 +57,11 @@ ActiveRecord::Schema.define(version: 20160515074033) do
     t.string   "major"
     t.string   "concept"
     t.string   "poster"
+<<<<<<< HEAD
+    t.text     "closing_time"
+=======
     t.time     "closing_time"
+>>>>>>> 06ed73f7c1f24ba12b2c59fca247011f517aba6d
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
