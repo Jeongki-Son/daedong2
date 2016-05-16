@@ -12,10 +12,10 @@ $( document ).ready(function() {
         var polygon = new daum.maps.Polygon({
             path:polygonPath, // 그려질 다각형의 좌표 배열입니다
             strokeWeight: 3, // 선의 두께입니다
-            strokeColor: '#39DE2A', // 선의 색깔입니다
+            strokeColor: '#DF5297', // 선의 색깔입니다
             strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
             strokeStyle: 'longdash', // 선의 스타일입니다
-            fillColor: '#A2FF99', // 채우기 색깔입니다
+            fillColor: '#DF5297', // 채우기 색깔입니다
             fillOpacity: 0.7 // 채우기 불투명도 입니다
         });
         
@@ -23,7 +23,7 @@ $( document ).ready(function() {
         polygon.setMap(map);
             
             
-        var iwContent = '<div style="padding:5px;"><a href= "#DOWNLOAD">공대주점</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        var iwContent = '<div style="padding:5px;"><a href= "#no7">공대주점</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                 iwPosition = new daum.maps.LatLng( 37.62973021045122, 127.07779342394082 ), //인포윈도우 표시 위치입니다
                 iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
             
