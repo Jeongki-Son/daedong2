@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "home#index"
   
   get 'home/gongdae' => 'home#gongdae'
-  get 'home/jengbo' => 'home#jengbo'
+  get 'home/jeongbo' => 'home#jeongbo'
   get 'home/design' => 'home#design'
   get 'home/energybio' => 'home#energybio'
   get 'home/gisol' => 'home#gisol'
