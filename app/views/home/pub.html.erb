@@ -1,22 +1,59 @@
+<body style="background: url(/assets/pubbackground.jpg) no-repeat fixed; background-size: cover;" >
 <div class="page-header">
+    <!-- nav bar 부분 -->
+    <div class="section_overlay">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="<%= asset_path 'stl.png' %>" alt="Logo">
+                        </a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- NAV -->
+                            <li><a href="https://daedong2-jeongki-son.c9users.io/#HOME">HOME</a> </li>
+                            <li><a href="https://daedong2-jeongki-son.c9users.io/#ABOUT">ABOUT </a> </li>
+                            <li><a href="https://daedong2-jeongki-son.c9users.io/#FEATURES">LineUp</a></li>
+                            <li><a href="https://daedong2-jeongki-son.c9users.io/#SCREENS">주점</a> </li>
+                            <li><a href="https://daedong2-jeongki-son.c9users.io/#DOWNLOAD">Live 지도 </a> </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                          <li><a href="https://daedong2-jeongki-son.c9users.io/home/pub">Detail한 주점 </a> </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container- -->
+            </nav>
+            </div>
+            <!-- 여기까지 nav bar 부분 --> 
+            
+            
 <h1>주점 메뉴 확인 페이지</h1> <br><br>
 </div>
 <% @post.each do |post| %>
 
-
-    <!-- 공사중 -->
             <div class="col-md-3 col-sm-6">
-                <div class="well">
-                        <img width="260" height="290" src="<%= post.poster %>" class="img-rounded" class="img-responsive" />
-                        <h4><strong><%= post.major %></strong></h4>
-                        <p><strong>학과 : </strong><%= post.major %></p>
-                        <p><strong>컨셉 : </strong><%= post.concept %></p>
-                        <p><strong>폐점시간 : </strong><%= post.closing_time %></p>
-                        <a href="<%=post.id%>"><p><strong>메뉴보기</strong></p></a>
-                </div>    
+                <div class="about_phone wow fadeInLeft animated animated" data-wow-duration="1s" data-wow-delay=".5s" style="margin-bottom: 10px; visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                    <div class="well">
+                            <img width="260" height="290" src="<%= post.poster %>" class="img-rounded" class="img-responsive" />
+                            <h4><strong><%= post.major %></strong></h4>
+                            <p><strong>학과 : </strong><%= post.major %></p>
+                            <p><strong>컨셉 : </strong><%= post.concept %></p>
+                            <p><strong>폐점시간 : </strong><%= post.closing_time %></p>
+                        <!-- 잠시 닫아둠    <a href="<%=post.id%>"><p><strong>메뉴보기</strong></p></a>  --> 
+                    </div>   
+                </div>
             </div>
-            
-    <!-- 여기까지 공사중 -->
 
     <!-- 원래코드입니다 
     <img src="<%= post.poster %>">
@@ -24,4 +61,6 @@
     <p><%= post.concept %></p>
     <p><%= post.closing_time %></p> -->    
 </div>
+
 <% end %>
+</body>
