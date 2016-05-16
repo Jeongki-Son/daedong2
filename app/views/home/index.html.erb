@@ -45,7 +45,8 @@
                             <!-- NAV -->
                             <li><a href="#HOME">HOME</a> </li>
                             <li><a href="#ABOUT">ABOUT </a> </li>
-                            <li><a href="#FEATURES">LineUp</a></li>
+                            <li><a href="#DOWNLOAD">Live PR</a></li>
+                            <li><a href="#FEATURES">Line Up</a></li>
                             <li><a href="#CONTACT">Live 지도 </a> </li>
                             <li><a href="#SCREENS">주점</a> </li>
                         </ul>
@@ -289,6 +290,78 @@
 
     <!-- END TESTIMONIAL SECTION -->
 
+    <section class="download page" id="DOWNLOAD">
+        
+    
+        <div class="container">
+            <div class="row" row=100>
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="download_screen text-center wow fadeInUp" data-wow-duration="1s">
+                    
+                    
+                         <h2><b>Live PR</b></h2>
+                        <p> 실시간 홍보 </p>
+                        <br><br>
+                        <h1>REAL-TIME CHAT</h1>
+
+
+                        <franeset>
+
+                        <div id="chat_list"></div>
+                        <% @posts.each do |p| %>
+                            <p> <%= p.nickname %>
+                            <p> <%= p.content %></p>
+                        <% end %>
+                        
+                        </franeset>    
+                        
+                        
+                        <textarea id="chat_nickname"></textarea>
+                        <textarea id="chat_content"></textarea>
+                        <a href="#" id="submit_msg">홍보하기</a>
+                        
+                        
+                        
+                        
+                        
+                      
+                        <script>
+          $(function() {
+               var pusher = new Pusher('1027adb1b8bdf7461125', {
+            encrypted: true
+          });
+          var channel = pusher.subscribe('onlyone');
+          channel.bind('new_message', function(data) {
+            var txt = data.message;
+                      $("#chat_list").append("<p>"+txt+"</p>");
+              });
+          
+              $("#submit_msg").click(function(){
+              $.ajax({
+                  data: {nickname: $("#chat_nickname").val()},
+                  data: {content: $("#chat_content").val()},
+                  url: "/home/send_msg",
+                  success: function(){
+                      $("#chat_nickname").val('');
+                      $("#chat_nickname").focus();
+                      $("#chat_content").val('');
+                      $("#chat_content").focus();
+                  }
+                  });
+              });
+          })
+      </script>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+    </section>
+
+
 
 
 <!-- =========================
@@ -395,6 +468,7 @@
     </section>
     <!-- END FEATURES SECTION -->
     
+        
     <!-- =========================
      START CONTCT FORM AREA
 ============================== -->
@@ -406,7 +480,7 @@
                     <!-- FEATURES SECTION TITLE -->
                     <div class="section_title wow fadeIn" data-wow-duration="1s">
                         <h2><b>지도</b></h2>
-                        <p>클릭하시면 무슨 일이 벌어질까요~?</p>
+                        <p>주점이름을 클릭해보세요.</p>
                     </div>
                     <!-- END FEATURES SECTION TITLE -->
                 </div>
