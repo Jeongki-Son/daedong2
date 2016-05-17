@@ -22,6 +22,8 @@ $( document ).ready(function() {
         // 지도에 다각형을 표시합니다
         polygon.setMap(map);
         
+
+
              
 });
 
@@ -43,5 +45,22 @@ $( document ).ready(function() {
         
         // 지도에 원을 표시합니다 
         circle.setMap(map); 
+    
+                        var content = '<div class ="label" ><span class="left"></span><span class="center"><a href = "#mo9">⑨수)13~14시</a></span><span class="right"></span></div>';
+
+        // 커스텀 오버레이가 표시될 위치입니다 
+        var position = new daum.maps.LatLng(37.631606555272114, 127.07773023877921 );  
+        
+        // 커스텀 오버레이를 생성합니다
+        var customOverlay = new daum.maps.CustomOverlay({
+            position: position,
+            content: content   
+        });
+        
+        // 커스텀 오버레이를 지도에 표시합니다
+        customOverlay.setMap(map);
+        
+
+
 });
 

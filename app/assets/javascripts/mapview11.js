@@ -18,10 +18,10 @@ $( document ).ready(function() {
         circle.setMap(map); 
         
         
-        var content = '<div class ="label" ><span class="left"></span><span class="center" style="color:black; font-weight:bold; font-size:15px">⑪ 20일 1-2시</span><span class="right"></span></div>';
+        var content = '<div class ="label" ><span class="left"></span><span class="center" style="color:black; font-weight:bold; font-size:15px"><a href = "#mo11">⑪금)13시~14시</a></span><span class="right"></span></div>';
 
         // 커스텀 오버레이가 표시될 위치입니다 
-        var position = new daum.maps.LatLng(37.63039589091537, 127.07936880553488);  
+        var position = new daum.maps.LatLng( 37.63038012557752, 127.07936595659753 );  
         
         // 커스텀 오버레이를 생성합니다
         var customOverlay = new daum.maps.CustomOverlay({

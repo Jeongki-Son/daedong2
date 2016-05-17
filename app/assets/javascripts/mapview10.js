@@ -16,5 +16,23 @@ $( document ).ready(function() {
         
         // 지도에 원을 표시합니다 
         circle.setMap(map); 
+        
+                var content = '<div class ="label" ><span class="left"></span><span class="center"><a href = "#mo10">⑩수)18시</a></span><span class="right"></span></div>';
+
+        // 커스텀 오버레이가 표시될 위치입니다 
+        var position = new daum.maps.LatLng(37.63404657124888, 127.07681794396434);  
+        
+        // 커스텀 오버레이를 생성합니다
+        var customOverlay = new daum.maps.CustomOverlay({
+            position: position,
+            content: content   
+        });
+        
+        // 커스텀 오버레이를 지도에 표시합니다
+        customOverlay.setMap(map);
+        
+
+
+        
 });
 
