@@ -2,10 +2,10 @@ $( document ).ready(function() {
 
             // 다각형을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 다각형을 표시합니다
         var polygonPath = [
-            new daum.maps.LatLng( 37.630224984912566, 127.07894946326422 ),
-            new daum.maps.LatLng(37.630195471190035, 127.0792949561192),
-            new daum.maps.LatLng( 37.63001754370951, 127.07926927765847),
-            new daum.maps.LatLng( 37.63009435529971, 127.07892949995505 ),
+            new daum.maps.LatLng(   37.63050879907899, 127.07894409914202 ),
+            new daum.maps.LatLng( 37.63047481659413, 127.07923577723724 ),
+            new daum.maps.LatLng(  37.63032842549676, 127.07920730012121),
+            new daum.maps.LatLng( 37.6303714158704, 127.07891846428099   ),
         ];
         
         // 지도에 표시할 다각형을 생성합니다
@@ -24,7 +24,7 @@ $( document ).ready(function() {
             
             
                     var iwContent = '<div style="padding:5px;"><a href= "#no5">조형대주점</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-                iwPosition = new daum.maps.LatLng( 37.6301257683974, 127.07911079153868), //인포윈도우 표시 위치입니다
+                iwPosition = new daum.maps.LatLng( 37.63050871753506, 127.07906588264282 ), //인포윈도우 표시 위치입니다
                 iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
             
             // 인포윈도우를 생성하고 지도에 표시합니다
