@@ -321,36 +321,7 @@
                         <a href="#" id="submit_msg">홍보하기</a>
                         
                         
-                        
-                        
-                        
-                      
-                        <script>
-          $(function() {
-               var pusher = new Pusher('1027adb1b8bdf7461125', {
-            encrypted: true
-          });
-          var channel = pusher.subscribe('onlyone');
-          channel.bind('new_message', function(data) {
-            var txt = data.message;
-                      $("#chat_list").append("<p>"+txt+"</p>");
-              });
-          
-              $("#submit_msg").click(function(){
-              $.ajax({
-                  data: {nickname: $("#chat_nickname").val()},
-                  data: {content: $("#chat_content").val()},
-                  url: "/home/send_msg",
-                  success: function(){
-                      $("#chat_nickname").val('');
-                      $("#chat_nickname").focus();
-                      $("#chat_content").val('');
-                      $("#chat_content").focus();
-                  }
-                  });
-              });
-          })
-      </script>
+                       
                         
                         
                     </div>
@@ -503,8 +474,7 @@
                           <button onclick="panTo()">과기대 운동장으로</button> 
                       </p>
                       
-                      <p><em>지도를 클릭해주세요!</em></p> 
-                      <p id="result"></p>
+                     
                  
                       <p>
                           <button onclick="hideMarkers()">마커 감추기</button>
@@ -512,6 +482,9 @@
                       </p> 
                       <p>클릭한 위치에 마커가 표시됩니다!</p>
                     </div>
+                    
+                     <p><em>지도를 클릭해주세요!</em></p> 
+                      <p id="result"></p>
                       <!-- END FEATURES SECTION TITLE -->
                   </div>
             </div>
