@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20160516174042) do
     t.string   "major"
     t.string   "concept"
     t.string   "poster"
-    t.time     "closing_time"
+    t.text     "closing_time"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
