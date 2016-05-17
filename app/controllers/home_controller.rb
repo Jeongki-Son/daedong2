@@ -5,7 +5,6 @@ class HomeController < ApplicationController
   
   def send_msg
     p = Post.new
-    p.content = params[:nickname]
     p.content = params[:content]
     p.save
     
