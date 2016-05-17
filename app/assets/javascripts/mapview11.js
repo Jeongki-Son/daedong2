@@ -1,4 +1,3 @@
-
 $( document ).ready(function() {
         // 지도에 표시할 원을 생성합니다
         var circle = new daum.maps.Circle({
@@ -34,4 +33,3 @@ $( document ).ready(function() {
         
             
 });
-

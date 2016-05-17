@@ -271,11 +271,10 @@ tuor:visited {
 
 
 .about {
-    background: url("middleware.png") no-repeat; 
-
+    background: url("pattern3.jpg");
 }
 .inner_about_area {
-    padding-top: 0px;
+    padding-top: 50px;
 }
 .inner_about_title {
     padding-bottom: 50px;
@@ -298,7 +297,7 @@ tuor:visited {
 .inner_about_title p {
     font-size: 19px;
     line-height: 24px;
-    margin-top: 0px;
+    margin-top: 40px;
 }
 .inner_about_desc {} .single_about_area {
     position: relative;
@@ -331,14 +330,13 @@ tuor:visited {
 .single_about_area:hover div i {
     color: #f39c12;
 }
-
-.about_phone img {} 
+.about_phone img {} @media (min-width: 991px) and (max-width: 1200px) {
     .about_phone img {
-        margin-top: 0px;
-        width: 100%;
-        margin-right: 0%
+        margin-top: 184px;
+        width: 80%;
+        margin-right: 20%
     }
-
+}
 /*---------------------------------------
    SECTION VIDEO              
 -----------------------------------------*/
@@ -805,7 +803,7 @@ div.carousel-inner .item img {
     justify-content: center; */
     margin: auto;
     width: 100%;
-    height: 250px;
+    height: 750px;
 }
 }
 
@@ -1103,7 +1101,7 @@ select:-webkit-autofill {
     right: 0;
     bottom: 0;
     background: #fff;
-    z-index: 50000;
+    z-index: 5;
     opacity: 1;
      -webkit-transition: all 1s;
     -moz-transition: all 1s;
@@ -1370,6 +1368,7 @@ select:-webkit-autofill {
 
 .chat {
 	background: #fff;
+	display:none;
 }
 
 .chat-history {
