@@ -1,5 +1,6 @@
+<h1><font size="10px" color="#00e572">정보통신대학</font></h1>
 <body style="background: url(/assets/pubbackground.jpg) no-repeat fixed; background-size: cover;" >
-
+<div class="page-header" margin-top=px>
     <!-- nav bar 부분 -->
     <div class="section_overlay">
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -36,34 +37,51 @@
             </nav>
             </div>
             <!-- 여기까지 nav bar 부분 -->       
-            
-<div class="page-header">            
-<h1 style="color:#00ff7f;"><b>주점 메뉴 확인 페이지</b></h1>
 </div>
-<% @post.each do |post| %>
 
-            <div class="col-md-3 col-sm-6">
+              <div class="col-md-3 col-sm-6">
                 <div class="about_phone wow fadeInLeft animated animated" data-wow-duration="1s" data-wow-delay=".5s" style="margin-bottom: 10px; visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInLeft;">
                     <div class="well" style="background-color: rgba(245, 245, 245, 0.4); border-color:transparent;">
-                            <img width="260" height="290" src="<%= post.poster %>" class="img-rounded" class="img-responsive" />
-                            <h2><span class="label label-primary"><%= post.major %></span></h3>
-                            
+                            <img width="260" height="290" src="<%= asset_path 'junmi.jpg' %>" class="img-rounded" class="img-responsive" />
+                            <h2><span class="label label-primary">전자IT미디어공학과</span></h3>
                             <h4 style="color:#090908">
-                            <strong>학과 : </strong><%= post.major %><br>
-                            <strong>컨셉 : </strong><%= post.concept %><br>
-                            <strong>폐점시간 : </strong><%= post.closing_time %><br>
+                            <strong>컨셉 : </strong>술 타요<br><br>
+                            <strong>폐점시간 : </strong>오전 2시 00분<br>
                             </h4>                     
-                        <!-- 잠시 닫아둠    <a href="<%=post.id%>"><p><strong>메뉴보기</strong></p></a>  --> 
                     </div>   
                 </div>
             </div>
-
-    <!-- 원래코드입니다 
-    <img src="<%= post.poster %>">
-    <p><%= post.major %></p>
-    <p><%= post.concept %></p>
-    <p><%= post.closing_time %></p> -->    
 </div>
 
-<% end %>
+             <div class="col-md-3 col-sm-6">
+                <div class="about_phone wow fadeInLeft animated animated" data-wow-duration="1s" data-wow-delay=".5s" style="margin-bottom: 10px; visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                    <div class="well" style="background-color: rgba(245, 245, 245, 0.4); border-color:transparent;">
+                            <img width="260" height="290" src="<%= asset_path 'comgong.jpg' %>" class="img-rounded" class="img-responsive" />
+                            <h2><span class="label label-primary">컴퓨터공학과</span></h3>
+                            <h4 style="color:#090908">
+                            <strong>컨셉 : </strong>복고<br><br>
+                            <strong>폐점시간 : </strong>오전 2시 00분<br>
+                            </h4>                     
+                    </div>   
+                </div>
+            </div>
+</div>
+
+  <div class="col-md-3 col-sm-6">
+                <div class="about_phone wow fadeInLeft animated animated" data-wow-duration="1s" data-wow-delay=".5s" style="margin-bottom: 10px; visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                    <div class="well" style="background-color: rgba(245, 245, 245, 0.4); border-color:transparent;">
+                            <img width="260" height="290" src="<%= asset_path 'junjung.PNG' %>" class="img-rounded" class="img-responsive" />
+                            <h2><span class="label label-primary">전기정보공학과</span></h3>
+                            <h4 style="color:#090908">
+                            <strong>컨셉 : </strong>FBI Warning<br><br>
+                            <strong>폐점시간 : </strong>오전 2시 00분<br>
+                            </h4>                     
+                    </div>   
+                </div>
+            </div>
+</div>
+
+
+
+
 </body>
