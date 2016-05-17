@@ -18,59 +18,17 @@
 		<div class="chat">
       
 			<div class="chat-history">
-			   <div id="chat_list"></div>
+			   <div id="chat_list"></div><hr>
                         <% @posts.reverse.each do |p| %>
                             <p><b><%= p.content %></b><br><%= p.created_at %></p><hr>
                         <% end %>
 			  </div>
-			  <textarea id="chat_content"></textarea>
-        <a id="submit_msg">Click</a>
+			  <textarea id="chat_content" style="width: 100%;" rows="4" cols="50" placeholder="내용을 입력해주세요." required></textarea>
+			  <div style="width:50px; height:100%; border-style:soild; border-size:5px; border-radius:5px; border-color:skyblue; background:skyblue; text-align:center;"><a style="text-decoration:none; font-size:15px;" id="submit_msg">Send</a></div>
   </div>
 </div>
 				
-	<script>
-	  (function() {
-
-	$('#live-chat header').on('click', function() {
-
-		$('.chat').slideToggle(300, 'swing');
-		$('.chat-message-counter').fadeToggle(300, 'swing');
-
-	});
-
-	$('.chat-close').on('click', function(e) {
-
-		e.preventDefault();
-		$('#live-chat').fadeOut(300);
-
-	});
-
-}) ();
-	</script>
 	
-	<script>
-          $(function() {
-               var pusher = new Pusher('1027adb1b8bdf7461125', {
-            encrypted: true
-          });
-          var channel = pusher.subscribe('onlyone');
-          channel.bind('new_message', function(data) {
-            var txt = data.message;
-                      $("#chat_list").append("<b>"+txt+"</b>");
-              });
-          
-              $("#submit_msg").click(function(){
-              $.ajax({
-                  data: {content: $("#chat_content").val()},
-                  url: "/home/send_msg",
-                  success: function(){
-                      $("#chat_content").val('');
-                      $("#chat_content").focus();
-                  }
-                  });
-              });
-          })
-      </script>
 
  <!-- =========================
      START ABOUT US SECTION
@@ -82,13 +40,7 @@
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="">
                             <img src="<%= asset_path 'stl.png' %>" alt="Logo">
                         </a>
                     </div>
@@ -98,7 +50,6 @@
                             <!-- NAV -->
                             <li><a href="#HOME">HOME</a> </li>
                             <li><a href="#ABOUT">ABOUT </a> </li>
-                            <li><a href="#DOWNLOAD">Live PR</a></li>
                             <li><a href="#FEATURES">Line Up</a></li>
                             <li><a href="#CONTACT">Live 지도 </a> </li>
                             <li><a href="#SCREENS">주점</a> </li>
@@ -218,7 +169,7 @@
                                     장소: 1학생회관 잔디밭<br>
                                     비용: <b style="color:#A6251E">무료</b></p>
                             </div>
-                            <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="2s" style="padding-left:0px" id="5">
+                            <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="2s" style="padding-left:0px" id="mo5">
                                 <!-- ICON -->
                                 <!-- HEADING DESCRIPTION -->
                                 <a href = "#map">
@@ -359,128 +310,6 @@
         </div>
     </section>
     <!-- End About Us -->
-
-
-
-
-
- <!-- =========================
-     START TESTIMONIAL SECTION
-============================== -->
-
-    <section id="TESTIMONIAL" class="testimonial parallax">
-        <div class="section_overlay">
-            <div class="container">
-                <div class="row row_cut">
-                    <div class="col-md-12 wow bounceInDown">
-                        <div id="carousel-example-caption-testimonial" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-caption-testimonial" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-caption-testimonial" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-caption-testimonial" data-slide-to="2"></li>
-                            </ol>
-
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <div class="container">
-                                        <div class="row row_cut">
-                                            <div class="col-md-12 text-center">
-                                                <!-- IMAGE -->
-                                                <img src="<%= asset_path 'jh.png' %>" alt="">
-                                                <div class="testimonial_caption">
-                                                   <!-- DESCRIPTION -->  
-                                                    <h2>김종호</h2>
-                                                    <h4><span>총장님,</span> 서울과학기술대학교</h4>
-                                                    <p>인사말인사말인사말인사말인사말인사말인사말인사말인사말</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="container">
-                                        <div class="row row_cut">
-                                            <div class="col-md-12 text-center">
-                                                 <!-- IMAGE -->
-                                                <img src="<%= asset_path 'dh.jpg' %>" alt="">
-                                                <div class="testimonial_caption">
-                                                <!-- DESCRIPTION --> 
-                                                    <h2>동행동행</h2>
-                                                    <h4><span>학생회장,</span> 서울과학기술대학교 동행</h4>
-                                                    <p>인사말인사말인사말인사말인사말인사말인사말인사말인사말인사말</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="container">
-                                        <div class="row row_cut">
-                                            <div class="col-md-12 text-center">
-                                                <!-- IMAGE -->
-                                                <img src="<%= asset_path 'dh.jpg' %>" alt="">
-                                                <div class="testimonial_caption">
-                                                <!-- DESCRIPTION --> 
-                                                    <h2>동행동행2</h2>
-                                                    <h4><span>부학생회장,</span> 서울과학기술대학교 동행</h4>
-                                                    <p>인사말3인사말3인사말3인사말3인사말3인사말3인사말3</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- END TESTIMONIAL SECTION -->
-
-    <section class="download page" id="DOWNLOAD">
-        
-    
-        <div class="container">
-            <div class="row row_cut" row=100>
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="download_screen text-center wow fadeInUp" data-wow-duration="1s">
-                    
-                    
-                         <h2><b>Live PR</b></h2>
-                        <p> 실시간 홍보 </p>
-                        <br><br>
-                        <h1>REAL-TIME CHAT</h1>
-
-
-                        
-                        
-                        
-<<<<<<< HEAD
-                        
-                        
-                        
-                      
-    
-=======
-                       
->>>>>>> f09de6faa845b1c2ab0e67dd9b77e2b44353a596
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    
-    </section>
-
-
 
 
 <!-- =========================
@@ -624,10 +453,9 @@
                           <button class="do_it" data-label="마커 보이기" onclick="showMarkers()">마커 보이기</button>
                       </p> 
                       <p>클릭한 위치에 마커가 표시됩니다!</p>
-                    </div>
-                    
-                     <p><em>지도를 클릭해주세요!</em></p> 
+                      <p>지도를 클릭해주세요!</p> 
                       <p id="result"></p>
+                    </div>
                       <!-- END FEATURES SECTION TITLE -->
                   </div>
             </div>
@@ -680,7 +508,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">MSDE<br><span style="color:red">원샷해적</span></a><span>/</span></h3>
+                            <h3><a >MSDE<br><span style="color:red">원샷해적</span></a><span>/</span></h3>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -690,7 +518,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">ITM<br><span style="color:red">꽃보다주점</span></a><span>/</span></h3>
+                            <h3><a >ITM<br><span style="color:red">꽃보다주점</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -699,7 +527,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">산업공학과<br><span style="color:red">웰컴투산공주점</span></a><span>/</span></h3>
+                            <h3><a >산업공학과<br><span style="color:red">웰컴투산공주점</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -716,7 +544,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">경영<br><span>\</span><span style="color:blue">어릔이대공원</span></a></h3>
+                            <h3><a >경영<br><span>\</span><span style="color:blue">어릔이대공원</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -725,7 +553,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">GTM<br><span>\</span><span style="color:blue">경성타임즈</span></a></h3>
+                            <h3><a >GTM<br><span>\</span><span style="color:blue">경성타임즈</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -749,7 +577,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">전기정보공학과<br><span style="color:red">전정나이트</span></a><span>/</span></h3>
+                            <h3><a >전기정보공학과<br><span style="color:red">전정나이트</span></a><span>/</span></h3>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -759,7 +587,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">전자IT공학과<br><span style="color:red">꼬마들이 술 타요</span></a><span>/</span></h3>
+                            <h3><a >전자IT공학과<br><span style="color:red">꼬마들이 술 타요</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -781,7 +609,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">컴퓨터공학과<br><span>\</span><span style="color:blue">공능 콤-퓨타</span></a></h3>
+                            <h3><a >컴퓨터공학과<br><span>\</span><span style="color:blue">공능 콤-퓨타</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -806,7 +634,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">정밀화학과<br><span style="color:red">???</span></a><span>/</span></h3>
+                            <h3><a >정밀화학과<br><span style="color:red">???</span></a><span>/</span></h3>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -816,7 +644,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">화공생명공학과<br><span style="color:red">술기로운 생활</span></a><span>/</span></h3>
+                            <h3><a >화공생명공학과<br><span style="color:red">술기로운 생활</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -825,7 +653,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">환경공학과<br><span style="color:red">어른이대공원</span></a><span>/</span></h3>
+                            <h3><a >환경공학과<br><span style="color:red">어른이대공원</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -844,7 +672,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">식품공학과<br><span>\</span><span style="color:blue">식공사우나</span></a></h3>
+                            <h3><a >식품공학과<br><span>\</span><span style="color:blue">식공사우나</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -853,7 +681,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">스포츠과학과<br><span>\</span><span style="color:blue">닭치고스과</span> </a></h3>
+                            <h3><a >스포츠과학과<br><span>\</span><span style="color:blue">닭치고스과</span> </a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -861,7 +689,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">안경광학과<br><span>\</span><span style="color:blue">가면무도회</span></a></h3>
+                            <h3><a >안경광학과<br><span>\</span><span style="color:blue">가면무도회</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -885,7 +713,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">디자인학과<br><span style="color:red">디학주점</span></a><span>/</span></h3>
+                            <h3><a >디자인학과<br><span style="color:red">디학주점</span></a><span>/</span></h3>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -895,7 +723,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">도자문화학과<br><span style="color:red">도:틸다</span></a><span>/</span></h3>
+                            <h3><a >도자문화학과<br><span style="color:red">도:틸다</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -913,7 +741,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">금속공예학과<br><span>\</span><span style="color:blue">섹시할로윈</span></a></h3>
+                            <h3><a >금속공예학과<br><span>\</span><span style="color:blue">섹시할로윈</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -922,7 +750,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">조형예술학과<br><span>\</span><span style="color:blue">조예디스코</span></a></h3>
+                            <h3><a >조형예술학과<br><span>\</span><span style="color:blue">조예디스코</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -946,7 +774,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">행정학과<br><span style="color:red">코카꽐라</span></a><span>/</span></h3>
+                            <h3><a >행정학과<br><span style="color:red">코카꽐라</span></a><span>/</span></h3>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -956,7 +784,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">영어영문학과<br><span style="color:red">???</span></a><span>/</span></h3>
+                            <h3><a >영어영문학과<br><span style="color:red">???</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -974,7 +802,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">문예창작학과<br><span>\</span><span style="color:blue">칵테일 실험실</span></a></h3>
+                            <h3><a >문예창작학과<br><span>\</span><span style="color:blue">칵테일 실험실</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -998,7 +826,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">기계시스템디자인공학과<br><span style="color:red">Summer Gang Vacance</span></a><span>/</span></h3>
+                            <h3><a >기계시스템디자인공학과<br><span style="color:red">Summer Gang Vacance</span></a><span>/</span></h3>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -1008,7 +836,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">기계자동차공학과<br><span style="color:red">응답하라 2016</span></a><span>/</span></h3>
+                            <h3><a >기계자동차공학과<br><span style="color:red">응답하라 2016</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -1017,7 +845,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">안전공학과<br><span style="color:red">미니언주</span></a><span>/</span></h3>
+                            <h3><a >안전공학과<br><span style="color:red">미니언주</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -1025,7 +853,7 @@
                         <div class="left_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">신소재공학과<br><span style="color:red">대추나무 이슬걸렸네</span></a><span>/</span></h3>
+                            <h3><a >신소재공학과<br><span style="color:red">대추나무 이슬걸렸네</span></a><span>/</span></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -1044,7 +872,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">건설시스템공학과<br><span>\</span><span style="color:blue">???</span></a></h3>
+                            <h3><a >건설시스템공학과<br><span>\</span><span style="color:blue">???</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -1053,7 +881,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">건축공학과<br><span>\</span><span style="color:blue">GS25시 공릉탕</span></a></h3>
+                            <h3><a >건축공학과<br><span>\</span><span style="color:blue">GS25시 공릉탕</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -1061,7 +889,7 @@
                         <div class="right_single_feature">
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><a href="#">건축학과<br><span>\</span><span style="color:blue">???</span></a></h3>
+                            <h3><a >건축학과<br><span>\</span><span style="color:blue">???</span></a></h3>
                         </div>
                         <!-- END SINGLE FEATURE -->
                         
@@ -1095,14 +923,12 @@
                     </div>
                     <div class="copy_right_text" style="width:100%">
                     <!-- COPYRIGHT TEXT -->
-                        <p>Developed by 손정기 조완호 박주환 윤현진</p>
+                        <p>Developed by 손정기 JWH PJH YHJ</p>
                     </div>
                 </div>
 
                 <div class="col-md-6">
-                    <div class="scroll_top">
-                        <a href="#HOME"><i class="fa fa-angle-up"></i></a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -1251,3 +1077,54 @@
           }
 
         </script>
+        
+        <script>
+	  (function() {
+
+	$('#live-chat header').on('click', function() {
+
+		$('.chat').slideToggle(300, 'swing');
+		$('.chat-message-counter').fadeToggle(300, 'swing');
+
+	});
+
+	$('.chat-close').on('click', function(e) {
+
+		e.preventDefault();
+		$('#live-chat').fadeOut(300);
+
+	});
+
+}) ();
+	</script>
+	
+	<script>
+          $(function() {
+               var pusher = new Pusher('1027adb1b8bdf7461125', {
+            encrypted: true
+          });
+          var channel = pusher.subscribe('onlyone');
+          channel.bind('new_message', function(data) {
+            var txt = data.message;
+                      $("#chat_list").append("<b>"+txt+"</b>");
+              });
+          
+              $("#submit_msg").click(function(){
+              $.ajax({
+                  data: {content: $("#chat_content").val()},
+                  url: "/home/send_msg",
+                  success: function(){
+                      $("#chat_content").val('');
+                      $("#chat_content").focus();
+                  }
+                  });
+              });
+          })
+          
+      $('#mybutton').on('click', function() {
+
+		$('#slide').slideToggle(300, 'swing');
+		$('#slide').fadeToggle(300, 'swing');
+
+	});
+      </script>
